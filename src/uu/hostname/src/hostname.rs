@@ -49,7 +49,7 @@ fn set_host_name(args: ArgMatches) -> UResult<()> {
         return Err(uucore::error::USimpleError::new(1, "No hostname specified"));
     };
 
-    hostname::set(hostname).map_err(|e| uucore::error::USimpleError::new(1, e.to_string()))?;
+    hostname::set(hostname)?;
     Ok(())
 }
 
